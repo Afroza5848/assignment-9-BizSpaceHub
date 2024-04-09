@@ -1,0 +1,104 @@
+[
+    {
+        "image": "https://i.ibb.co/ncXKMkk/office.jpg",
+        "estate_title": "Prime Office Space in Central Business District",
+        "id": 1,
+        "segment_name": "Office Space",
+        "description": "Modern office building with state-of-the-art facilities. Ideal for businesses looking for a prestigious location.",
+        "price": "$10,000/month",
+        "status": "rent",
+        "area": "5,000 sq ft",
+        "location": "Manhattan, NY",
+        "facilities": [
+            "Conference Rooms",
+            "High-speed Internet",
+            "Parking Garage"
+        ],
+        "view_property_button": "View Property"
+    },
+    {
+        "image": "https://i.ibb.co/MNg2gfS/retail.jpg",
+        "estate_title": "Retail Storefront in Busy Shopping Plaza",
+        "id": 2,
+        "segment_name": "Retail Space",
+        "description": "Spacious retail storefront with high visibility and foot traffic. Perfect for retail businesses or restaurants.",
+        "price": "$2,500,000",
+        "status": "sale",
+        "area": "3,000 sq ft",
+        "location": "Los Angeles, CA",
+        "facilities": [
+            "Storefront Display",
+            "Outdoor Patio",
+            "Kitchenette"
+        ],
+        "view_property_button": "View Property"
+    },
+    {
+        "image": "https://i.ibb.co/G5Fhnbm/warehouse.jpg",
+        "estate_title": "Warehouse Facility with Loading Docks",
+        "id": 3,
+        "segment_name": "Warehouse",
+        "description": "Large warehouse space with loading docks and ample storage. Suitable for distribution or manufacturing businesses.",
+        "price": "$6,000/month",
+        "status": "rent",
+        "area": "10,000 sq ft",
+        "location": "Chicago, IL",
+        "facilities": [
+            "Loading Docks",
+            "Storage Racks",
+            "Security System"
+        ],
+        "view_property_button": "View Property"
+    },
+    {
+        "image": "https://i.ibb.co/98Bnzcw/marina.jpg",
+        "estate_title": "Entertainment Venue with Stage and Bar",
+        "id": 4,
+        "segment_name": "Entertainment Venue",
+        "description": "Versatile entertainment venue equipped with a stage, bar, and seating area. Perfect for concerts, events, or parties.",
+        "price": "$1,200,000",
+        "status": "sale",
+        "area": "7,500 sq ft",
+        "location": "Miami, FL",
+        "facilities": [
+            "Stage",
+            "Bar",
+            "VIP Lounge"
+        ],
+        "view_property_button": "View Property"
+    },
+    {
+        "image": "https://i.ibb.co/YdypWcV/factory.jpg",
+        "estate_title": "Industrial Complex with Manufacturing Facilities",
+        "id": 5,
+        "segment_name": "Industrial",
+        "description": "Comprehensive industrial complex equipped with manufacturing facilities, warehouses, and office space. Ideal for large-scale production.",
+        "price": "$8,500,000",
+        "status": "sale",
+        "area": "100,000 sq ft",
+        "location": "Detroit, MI",
+        "facilities": [
+            "Manufacturing Units",
+            "Warehouses",
+            "Office Space"
+        ],
+        "view_property_button": "View Property"
+    },
+    {
+        "image": "https://i.ibb.co/KrDc8Tj/happy-waiter.jpg",
+        "estate_title": "Upscale Restaurant in Entertainment District",
+        "id": 5,
+        "segment_name": "Restaurants",
+        "description": "Savor the taste of success at this upscale restaurant located in the vibrant entertainment district. Offering a sophisticated ambiance, delectable cuisine, and impeccable service, it provides an unforgettable dining experience for patrons. With a fully equipped kitchen, stylish dining area, and outdoor patio, it's the perfect venue for culinary entrepreneurs looking to make their mark in the restaurant scene.",
+        "price": "$3,000,000",
+        "status": "sale",
+        "area": "5,000 sq ft",
+        "location": "Miami, FL",
+        "facilities": [
+            "Dining Area",
+            "Kitchen",
+            "Outdoor Patio"
+        ],
+        "view_property_button": "View Property"
+    }
+]
