@@ -3,30 +3,30 @@ import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
     const Navlink = <>
-        <li><NavLink className={({ isActive, isPending }) =>
+        <NavLink className={({ isActive, isPending }) =>
             isActive
-                ? "text-white bg-orange-600 font-medium"
+                ? "text-white bg-orange-600 font-medium px-3 py-2 rounded-lg"
                 : isPending
                     ? "font-semibold"
-                    : "bg-white"
-        } to="/">Home</NavLink></li>
-        <li><NavLink className={({ isActive, isPending }) =>
+                    : "px-3 py-2"
+        } to="/"><a>Home</a></NavLink>
+        <NavLink className={({ isActive, isPending }) =>
             isActive
-                ? "text-white bg-orange-600 font-medium"
+                ? "text-white bg-orange-600 font-medium px-3 py-2 rounded-lg"
                 : isPending
                     ? "font-semibold"
-                    : "bg-white"
-        } to="/update-profile">Update Profile</NavLink></li>
-        <li><NavLink className={({ isActive, isPending }) =>
+                    : "px-3 py-2"
+        } to="/update-profile"><a>Update Profile</a></NavLink>
+        <NavLink className={({ isActive, isPending }) =>
             isActive
-                ? "text-white bg-orange-600 font-medium"
+                ? "text-white bg-orange-600 font-medium px-3 py-2 rounded-lg"
                 : isPending
                     ? "font-semibold"
-                    : ""
-        } to="/contact">contact</NavLink></li>
+                    : "px-3 py-2"
+        } to="/contact"><a>contact</a></NavLink>
     </>
     return (
-        <div className="shadow-xl">
+        <div className="">
             <div className="navbar bg-base-100 container mx-auto py-8">
                 <div className="navbar-start">
                     <div className="dropdown">
@@ -37,7 +37,7 @@ const Navbar = () => {
                             {Navlink}
                         </ul>
                     </div>
-                    <a className="btn btn-ghost text-4xl oswald p-0">Biz<span className="text-orange-600 p-0">Space</span>Hub</a>
+                    <a className="btn btn-ghost text-4xl oswald p-0">Biz<span className="text-orange-600">Space</span>Hub</a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className=" menu menu-horizontal px-1 space-x-4 text-xl roboto">
