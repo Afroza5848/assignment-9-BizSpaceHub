@@ -3,6 +3,7 @@ import Root from "../Layout/Root";
 import Home from "../pages/Home/Home";
 import UpdateProfile from "../pages/UpdateProfile/UpdateProfile";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
+import CardDetails from "../pages/CardDetails/CardDetails";
 
 
 export const router = createBrowserRouter([
@@ -19,6 +20,11 @@ export const router = createBrowserRouter([
         {
             path:"/update-profile",
             element:<UpdateProfile></UpdateProfile>
+        },
+        {
+          path:"/singleCard/:id",
+          element:<CardDetails></CardDetails>,
+          loader: () => fetch('/data.json')
         }
       ]
     },
