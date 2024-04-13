@@ -4,6 +4,8 @@ import Home from "../pages/Home/Home";
 import UpdateProfile from "../pages/UpdateProfile/UpdateProfile";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
 import CardDetails from "../pages/CardDetails/CardDetails";
+import Login from "../pages/Login/Login";
+import Register from "../pages/Register/Register";
 
 
 export const router = createBrowserRouter([
@@ -25,6 +27,14 @@ export const router = createBrowserRouter([
           path:"/singleCard/:id",
           element:<CardDetails></CardDetails>,
           loader: () => fetch('/data.json')
+        },
+        {
+          path:"/login",
+          element:<Login></Login>
+        },
+        {
+          path:"/register",
+          element:<Register></Register>
         }
       ]
     },
