@@ -1,7 +1,11 @@
+import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../../AuthProvider/AuthProvider";
 
 
 const Navbar = () => {
+
+    const { user, logOut } = useContext(AuthContext)
     const Navlink = <>
         <NavLink className={({ isActive, isPending }) =>
             isActive
@@ -45,13 +49,25 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end space-x-3">
-                    <div className="avatar mr-3">
-                        <div className="w-12 rounded-full ring ring-orange-600 ring-offset-base-100 ring-offset-2">
-                            <img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                    {
+                        user &&
+                        <div className="tooltip" data-tip={user.displayName}>
+                            <div className="avatar mr-3">
+                                <div className="w-12 rounded-full ring ring-orange-600 ring-offset-base-100 ring-offset-2">
+                                    <img src={user.photoURL} />
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    <Link to="/login"><button className="btn bg-white border border-orange-600 text-orange-600 font-bold text-xl oswald hover:bg-orange-600 hover:text-white hover:transition-colors">Login</button></Link>
-                    <button className="btn bg-white border border-orange-600 text-orange-600 font-bold text-xl oswald hover:bg-orange-600 hover:text-white hover:transition-colors">Logout</button>
+
+                    }
+                    {
+                        user ?
+                            <button onClick={() => logOut()} className="btn bg-white border border-orange-600 text-orange-600 font-bold text-xl oswald hover:bg-orange-600 hover:text-white hover:transition-colors">Logout</button>
+                            :
+                            <Link to="/login"><button className="btn bg-white border border-orange-600 text-orange-600 font-bold text-xl oswald hover:bg-orange-600 hover:text-white hover:transition-colors">Login</button></Link>
+                    }
+
+
                 </div>
             </div>
         </div>
