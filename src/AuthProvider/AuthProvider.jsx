@@ -1,5 +1,5 @@
 
-import { GithubAuthProvider, createUserWithEmailAndPassword, onAuthStateChanged, signInWithPopup, signOut } from 'firebase/auth';
+import { GithubAuthProvider, createUserWithEmailAndPassword, onAuthStateChanged, signInWithPopup, signOut, updateProfile } from 'firebase/auth';
 import PropTypes from 'prop-types';
 import { createContext, useEffect, useState } from 'react';
 import auth from '../Firebase/Firebase.config';
@@ -9,20 +9,35 @@ export const AuthContext = createContext(null);
 
 
 const AuthProvider = ({ children }) => {
-    
+
 
     const [user, setUser] = useState(null);
+    const [loading, setLoading] = useState(true)
     console.log(user);
     // create user
     const createUser = (email, password) => {
+        setLoading(true)
         return createUserWithEmailAndPassword(auth, email, password);
+    }
+    // use profile update
+    const createUserUpdateProfile = (name,image) => {
+       
+        updateProfile(auth.currentUser, {
+            displayName: name,
+             photoURL: image
+        })
+       
+        
+
     }
     // create user sign in
     const createUserSignIn = (email, password) => {
+        setLoading(true)
         return signInWithEmailAndPassword(auth, email, password)
     }
     // user sign out 
     const logOut = () => {
+        setLoading(true)
         return signOut(auth);
     }
     // social media login
@@ -31,15 +46,18 @@ const AuthProvider = ({ children }) => {
 
     // google login
     const googleLogin = () => {
-        return signInWithPopup(auth,googleProvider)
+        setLoading(true)
+        return signInWithPopup(auth, googleProvider)
     }
-     // github login
-     const githubLogin = () => {
-        return signInWithPopup(auth,githubProvider)
+    // github login
+    const githubLogin = () => {
+        setLoading(true)
+        return signInWithPopup(auth, githubProvider)
     }
     // use observer
     useEffect(() => {
         const unSubscribe = onAuthStateChanged(auth, currentUser => {
+            setLoading(false)
             setUser(currentUser)
         })
         return () => {
@@ -54,7 +72,9 @@ const AuthProvider = ({ children }) => {
         logOut,
         googleLogin,
         githubLogin,
-        user
+        createUserUpdateProfile,
+        user,
+        loading
     }
     return (
         <AuthContext.Provider value={authInfo}>

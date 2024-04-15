@@ -51,10 +51,10 @@ const Navbar = () => {
                 <div className="navbar-end space-x-3">
                     {
                         user &&
-                        <div className="tooltip" data-tip={user.displayName}>
+                        <div className="tooltip" data-tip={user?.displayName || 'User Name Not Found'}>
                             <div className="avatar mr-3">
                                 <div className="w-12 rounded-full ring ring-orange-600 ring-offset-base-100 ring-offset-2">
-                                    <img src={user.photoURL} />
+                                    <img src={user?.photoURL || "https://img.freepik.com/premium-vector/default-image-icon-vector-missing-picture-page-website-design-mobile-app-no-photo-available_87543-11093.jpg"} />
                                 </div>
                             </div>
                         </div>

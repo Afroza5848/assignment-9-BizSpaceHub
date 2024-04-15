@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import registerImg from '../../assets/image/register.jpg'
 import { useContext, useState } from 'react';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
@@ -9,12 +9,13 @@ import { FaEye } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa";
 
 const Register = () => {
-   
+    const navigate = useNavigate();
+ 
     const [userError,setUserError] = useState('');
     const [showPassword,setShowPassword] = useState(false);
     console.log(userError);
     //   useContext
-    const { createUser } = useContext(AuthContext);
+    const { createUser,createUserUpdateProfile } = useContext(AuthContext);
     // use hook form
     const {
         register,
@@ -24,7 +25,7 @@ const Register = () => {
 
 
     const onSubmit = (data) => {
-        const { email, password } = data;
+        const { email, password,name,photo } = data;
         // reset error
         setUserError('')
         if(password.length < 6){
@@ -41,7 +42,12 @@ const Register = () => {
         createUser(email, password)
             .then(result => {
                 console.log(result.user);
-                toast.success("User Added Successfully")
+                
+                createUserUpdateProfile(name,photo)
+                toast.success("User Added Successfully");
+                
+                
+                
             })
             .catch(error => {
                 setUserError(error.message.split('(')[1].split(')')[0]);

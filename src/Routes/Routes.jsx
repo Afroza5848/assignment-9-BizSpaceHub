@@ -6,6 +6,7 @@ import ErrorPage from "../pages/ErrorPage/ErrorPage";
 import CardDetails from "../pages/CardDetails/CardDetails";
 import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
+import PrivateRoute from "./PrivateRoute/PrivateRoute";
 
 
 export const router = createBrowserRouter([
@@ -21,11 +22,13 @@ export const router = createBrowserRouter([
         },
         {
             path:"/update-profile",
-            element:<UpdateProfile></UpdateProfile>
+            element:<PrivateRoute><UpdateProfile></UpdateProfile></PrivateRoute>
         },
         {
           path:"/singleCard/:id",
-          element:<CardDetails></CardDetails>,
+          element:<PrivateRoute>
+            `   <CardDetails></CardDetails>
+            </PrivateRoute>,
           loader: () => fetch('/data.json')
         },
         {
