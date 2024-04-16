@@ -30,8 +30,8 @@ const Navbar = () => {
         } to="/contact"><a>contact</a></NavLink>
     </>
     return (
-        <div className="">
-            <div className="navbar bg-base-100 container mx-auto py-8">
+        <div className="bg-base-100">
+            <div className="navbar container mx-auto py-8">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -41,19 +41,19 @@ const Navbar = () => {
                             {Navlink}
                         </ul>
                     </div>
-                    <a className="btn btn-ghost text-4xl oswald p-0">Biz<span className="text-orange-600">Space</span>Hub</a>
+                    <a className="btn btn-ghost md:text-4xl text-2xl oswald p-0">Biz<span className="text-orange-600">Space</span>Hub</a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className=" menu menu-horizontal px-1 space-x-4 text-xl roboto">
                         {Navlink}
                     </ul>
                 </div>
-                <div className="navbar-end space-x-3">
+                <div className="navbar-end md:space-x-3 ">
                     {
                         user &&
                         <div className="tooltip" data-tip={user?.displayName || 'User Name Not Found'}>
                             <div className="avatar mr-3">
-                                <div className="w-12 rounded-full ring ring-orange-600 ring-offset-base-100 ring-offset-2">
+                                <div className="md:w-12 w-10 rounded-full ring ring-orange-600 ring-offset-base-100 ring-offset-2">
                                     <img src={user?.photoURL || "https://img.freepik.com/premium-vector/default-image-icon-vector-missing-picture-page-website-design-mobile-app-no-photo-available_87543-11093.jpg"} />
                                 </div>
                             </div>

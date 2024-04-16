@@ -7,6 +7,7 @@ import { AuthContext } from '../../AuthProvider/AuthProvider';
 import { useForm } from "react-hook-form"
 import { toast,ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Helmet } from 'react-helmet-async';
 
 
 const Login = () => {
@@ -56,6 +57,9 @@ const Login = () => {
     
     return (
         <section className=" dark:text-gray-800  ">
+            <Helmet>
+                <title>Hub | Login</title>
+            </Helmet>
             <div className="container px-2 flex flex-col justify-center lg:w-[60%] items-center mx-auto  lg:flex-row lg:justify-between">
 
                 <div>

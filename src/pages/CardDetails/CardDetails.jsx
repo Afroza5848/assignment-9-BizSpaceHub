@@ -3,6 +3,8 @@ import { IoPricetagsSharp } from "react-icons/io5";
 import { FaDollarSign } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
 import { FaChartArea } from "react-icons/fa";
+import { Helmet } from 'react-helmet-async';
+import 'animate.css';
 
 const CardDetails = () => {
     const cards = useLoaderData()
@@ -12,17 +14,20 @@ const CardDetails = () => {
     const { image, segment_name, estate_title, price, location, description, area, status, facilities } = card;
     return (
         <div className="container mx-auto px-2">
-            <div className="w-full py-14 bg-base-200 rounded-2xl border-b-4 border-orange-600 shadow-lg ">
-                <h2 className="text-center text-5xl oswald font-medium">Featured</h2>
+            <Helmet>
+                <title>Hub Details: {id}</title>
+            </Helmet>
+            <div className="animate__animated animate__bounce w-full py-12 bg-base-200 rounded-2xl border-b-4 border-orange-600 shadow-lg ">
+                <h2 className="animate__animated animate__fadeInDownBig text-center text-5xl oswald font-medium">Featured</h2>
             </div>
 
 
             <div className="card lg:card-side bg-base-100 mb-20 lg:mt-20 mt-10 gap-10 ">
 
-                <figure className='w-[150%] h-full'><img className='relative z-10 rounded-2xl w-full h-full' src={image} alt="home" /></figure>
+                <figure className='animate__animated animate__bounceInLeft animate__delay-1s lg:w-[150%] h-full'><img className='relative z-10 rounded-2xl w-full h-full' src={image} alt="home" /></figure>
                 {/* <p className='w-80 h-64 lg:flex hidden bg-orange-600 absolute -top-8 -left-8'></p> */}
 
-                <div className="">
+                <div className="animate__animated animate__bounceInRight animate__delay-1s">
                     <h2 className="card-title roboto text-[#444] text-2xl">{estate_title}</h2>
                     <div className="flex items-center gap-2 border-b border-gray-200 pb-6">
                         <IoPricetagsSharp className="text-orange-600 text-xl" />

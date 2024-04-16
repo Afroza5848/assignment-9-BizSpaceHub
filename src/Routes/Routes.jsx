@@ -7,6 +7,7 @@ import CardDetails from "../pages/CardDetails/CardDetails";
 import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
 import PrivateRoute from "./PrivateRoute/PrivateRoute";
+import Contact from "../components/Contact/Contact";
 
 
 export const router = createBrowserRouter([
@@ -27,7 +28,7 @@ export const router = createBrowserRouter([
         {
           path:"/singleCard/:id",
           element:<PrivateRoute>
-            `   <CardDetails></CardDetails>
+               <CardDetails></CardDetails>
             </PrivateRoute>,
           loader: () => fetch('/data.json')
         },
@@ -38,6 +39,10 @@ export const router = createBrowserRouter([
         {
           path:"/register",
           element:<Register></Register>
+        },
+        {
+          path:"/contact",
+          element:<Contact></Contact>
         }
       ]
     },

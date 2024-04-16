@@ -26,7 +26,11 @@ const AuthProvider = ({ children }) => {
             displayName: name,
              photoURL: image
         })
-       
+       setUser({
+        ...user,
+        displayName:name,
+        photoURL:image,
+       })
         
 
     }
@@ -43,6 +47,8 @@ const AuthProvider = ({ children }) => {
     // social media login
     const googleProvider = new GoogleAuthProvider();
     const githubProvider = new GithubAuthProvider();
+    githubProvider.addScope("read:user");
+    githubProvider.addScope("user:email");
 
     // google login
     const googleLogin = () => {
