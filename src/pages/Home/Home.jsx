@@ -11,7 +11,7 @@ const Home = () => {
             <Helmet>
                 <title>Hub | Home</title>
             </Helmet>
-            <div className="container mx-auto">
+            <div className="">
                 <Banner></Banner>
             </div>
             
