@@ -1,11 +1,15 @@
+import { Helmet } from "react-helmet-async";
 import { FaLocationDot } from "react-icons/fa6";
 
 const Contact = () => {
 
 
     return (
-        <div className="">
+        <div>
             <div>
+            <Helmet>
+                <title>Hub | Contact</title>
+            </Helmet>
                 <section className="py-6 bg-[#ff371719] dark:text-gray-900">
                     <div className="grid lg:max-w-6xl grid-cols-1 px-6 mx-auto lg:px-8 md:grid-cols-2 md:divide-x">
                         <div className="py-6 mt-8  md:w-full w-10/12 mx-auto  md:py-0 md:px-6">
@@ -35,7 +39,7 @@ const Contact = () => {
                                 </p>
                             </div>
                         </div>
-                        <section className="p-6 dark:text-gray-800">
+                        <section className="p-6 dark:text-gray-800"  data-aos="zoom-in"  data-aos-delay="50">
                             <form noValidate="" className="container w-full max-w-xl p-8 mx-auto space-y-6 rounded-md shadow-lg ">
                                 <h2 className="w-full text-6xl font-bold leading-tight oswald ">Contact <span className="text-orange-600">us</span></h2>
                                 <div>
@@ -59,6 +63,9 @@ const Contact = () => {
                 </section>
 
             </div>
+
+
+            {/* other location */}
             <div className="container mx-auto">
                 <div className="text-center mt-24 mb-16">
                     <h2 className="oswald text-5xl font-medium">

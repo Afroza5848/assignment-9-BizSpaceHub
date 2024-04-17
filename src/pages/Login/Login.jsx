@@ -76,7 +76,7 @@ const Login = () => {
                                 <input type={showPassword ? "text" : "password"} name="password" id="password" placeholder="Password" className="w-full px-4 py-3 rounded-md border border-gray-300  dark:text-gray-800 focus:dark:border-orange-600" {...register("password", { required: true })} />
                                 {errors.password && <span className='text-red-500 roboto'>This field is required</span>}
                                 <span onClick={() => setShowPassword(!showPassword)} className='absolute top-8 right-4 text-orange-600 text-xl'>
-                                    {showPassword ? <FaEyeSlash></FaEyeSlash> : <FaEye></FaEye>}
+                                    {showPassword ? <FaEye></FaEye> : <FaEyeSlash></FaEyeSlash>}
                                 </span>
                             </div>
                             <button className="block w-full p-3 text-center rounded-sm dark:text-gray-50 dark:bg-orange-600 font-medium oswald">Login</button>

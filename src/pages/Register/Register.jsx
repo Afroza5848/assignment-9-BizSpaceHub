@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-//import registerImg from '../../assets/image/register.jpg'
+import registerImg from '../../assets/image/registerImg.png'
 import { useContext, useState } from 'react';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 import { useForm } from "react-hook-form"
@@ -52,15 +52,15 @@ const Register = () => {
 
 
     return (
-        <div className=''>
+        <div className='flex lg:flex-row flex-col container mx-auto rounded-xl'>
             <Helmet>
                 <title>Hub | Register</title>
             </Helmet>
-            {/* <div className='lg:h-[95vh] w-full relative'>
-                <img className='h-full w-full opacity-50 relative' src={registerImg} alt="" />
-            </div> */}
+            <div className='bg-orange-600 lg:w-[50%] '>
+                <img className='rounded-xl' src={registerImg} alt="" />
+            </div>
 
-            <div className="w-1/3 mx-auto p-10  space-y-3 rounded-xl dark:text-gray-800 bg-base-200 shadow-lg">
+            <div className="lg:w-[50%] w-full mx-auto p-10  space-y-3  dark:text-gray-800 border border-orange-600">
                 <h1 className="text-3xl oswald font-bold text-center">Please Register Now!</h1>
                 <form onSubmit={handleSubmit(onSubmit)} noValidate="" action="" className="space-y-6">
                     <div className="space-y-1 text-sm">
@@ -83,7 +83,7 @@ const Register = () => {
                         <input type={showPassword ? "text" : "password"} name="password" id="password" placeholder="Password" className="w-full px-4 py-3 rounded-md border border-gray-300  dark:text-gray-800 focus:dark:border-orange-600 " {...register("password", { required: true })} />
                         {errors.password && <span className='text-red-500 roboto'>This field is required</span>}
                         <span  onClick={() => setShowPassword(!showPassword)} className='absolute top-8 right-4 text-orange-600 text-xl'>
-                            {showPassword ? <FaEyeSlash></FaEyeSlash> : <FaEye></FaEye>} 
+                            {showPassword ? <FaEye></FaEye> : <FaEyeSlash></FaEyeSlash>} 
                         </span>
                     </div>
                     <button className="block w-full p-3 text-center rounded-sm dark:text-gray-50 dark:bg-orange-600 font-medium oswald">Register</button>

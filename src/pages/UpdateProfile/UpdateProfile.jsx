@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 
 const UpdateProfile = () => {
-    const { user, setUser, createUserUpdateProfile } = useContext(AuthContext)
+    const { user, createUserUpdateProfile } = useContext(AuthContext)
 
     const {
         register,
@@ -17,7 +17,7 @@ const UpdateProfile = () => {
 
         const { name, photo, } = data;
         createUserUpdateProfile(name, photo)
-        setUser()
+        
         toast.success("Update Profile Successfully");
 
     }

@@ -37,7 +37,7 @@ const Navbar = () => {
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                         </div>
-                        <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                        <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 z-20 rounded-box w-52">
                             {Navlink}
                         </ul>
                     </div>
@@ -62,9 +62,9 @@ const Navbar = () => {
                     }
                     {
                         user ?
-                            <button onClick={() => logOut()} className="btn bg-white border border-orange-600 text-orange-600 font-bold text-xl oswald hover:bg-orange-600 hover:text-white hover:transition-colors">Logout</button>
+                            <button onClick={() => logOut()} className="md:px-5 md:py-2.5 px-2 py-2 rounded-lg bg-white border border-orange-600 text-orange-600 font-bold text-xl oswald hover:bg-orange-600 hover:text-white hover:transition-colors">Logout</button>
                             :
-                            <Link to="/login"><button className="btn bg-white border border-orange-600 text-orange-600 font-bold text-xl oswald hover:bg-orange-600 hover:text-white hover:transition-colors">Login</button></Link>
+                            <Link to="/login"><button className="px-5 py-2.5 rounded-lg bg-white border border-orange-600 text-orange-600 font-bold text-xl oswald hover:bg-orange-600 hover:text-white hover:transition-colors">Login</button></Link>
                     }
 
 

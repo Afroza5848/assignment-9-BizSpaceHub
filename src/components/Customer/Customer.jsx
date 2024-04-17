@@ -14,10 +14,11 @@ import { EffectCoverflow, Pagination } from 'swiper/modules';
 const Customer = () => {
 
     return (
-        <>
+        <div>
+            
             <div className="container flex flex-col items-center mx-auto mb-12 md:max-w-[1000px]  md:p-10 md:px-12">
-                <h1 className="p-4 text-4xl font-semibold leading-none text-center oswald">What our customers are saying about us</h1>
-                <p className='text-center roboto'>We love talking about technology and we could wax lyrical about all the wonderful things we do for our clients. But we prefer to let our results – and our clients – speak for themselves. So, here’s what our clients say about us. You can even contact them directly and hear it for yourself.</p>
+                <h1 className="p-4 text-4xl font-semibold leading-none text-center oswald" data-aos="fade-up-left"  data-aos-delay="1000" >What our customers are saying about us</h1>
+                <p className='text-center roboto' data-aos="fade-up-left"  data-aos-delay="2000">We love talking about technology and we could wax lyrical about all the wonderful things we do for our clients. But we prefer to let our results – and our clients – speak for themselves. So, here’s what our clients say about us. You can even contact them directly and hear it for yourself.</p>
             </div>
             <Swiper
              breakpoints={{
@@ -226,7 +227,7 @@ const Customer = () => {
 
 
         </Swiper >
-        </>
+        </div>
 
     )
 
