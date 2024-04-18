@@ -66,7 +66,8 @@ const Register = () => {
             </div>
 
             <div className="lg:w-[50%] w-full mx-auto p-10  space-y-3  dark:text-gray-800 border border-orange-600">
-                <h1 className="text-3xl oswald font-bold text-center">Please Register Now!</h1>
+                <h1 className="text-3xl oswald font-bold text-center" data-aos="zoom-in"  data-aos-delay="1000" data-aos-duration="1000">Please Register Now!</h1>
+                <p className='text-center text-xl roboto'>Nice to meet you! Enter your details to register.</p>
                 <form onSubmit={handleSubmit(onSubmit)} noValidate="" action="" className="space-y-6">
                     <div className="space-y-1 text-sm">
                         <label htmlFor="name" className="block dark:text-gray-600">Name</label>

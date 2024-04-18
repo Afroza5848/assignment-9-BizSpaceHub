@@ -23,7 +23,7 @@ const UpdateProfile = () => {
     }
 
     return (
-        <div className="container mx-auto px-2 flex lg:flex-row flex-col gap-8 justify-between mb-20">
+        <div className="container mx-auto px-2 flex lg:flex-row flex-col gap-8 justify-between mb-20" data-aos="zoom-in" data-aos-delay="1000"  data-aos-duration="1000">
             <Helmet>
                 <title>Hub | Update Profile</title>
             </Helmet>
@@ -41,10 +41,10 @@ const UpdateProfile = () => {
 
             </div>
 
-            <div className="flex flex-col justify-center lg:w-[48%] w-full mx-auto p-6 shadow-md rounded-xl  py-10 bg-base-200 dark:text-gray-800">
+            <div className="flex flex-col justify-center lg:w-[48%] w-full mx-auto p-6 shadow-md rounded-xl  py-10 bg-base-200 dark:text-gray-800" data-aos="zoom-in" data-aos-delay="1000"  data-aos-duration="1000">
 
 
-                <h2 className="text-4xl oswald py-3 text-center text-orange-600 font-medium mb-5">Update Your Profile</h2>
+                <h2 className="text-4xl oswald py-3 text-center text-orange-600 font-medium mb-5" data-aos="zoom-in" data-aos-delay="1000"  data-aos-duration="1000">Update Your Profile</h2>
 
                 <div className="space-y-4 text-center ">
 

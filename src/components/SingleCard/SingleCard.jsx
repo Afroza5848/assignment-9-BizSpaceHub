@@ -8,7 +8,7 @@ const SingleCard = ({ card }) => {
     return (
         <div>
            
-            <div className="card bg-base-100 shadow-xl h-full " data-aos="fade-right" data-aos-delay="1000">
+            <div className="card bg-base-100 shadow-xl h-full " data-aos="zoom-in" data-aos-delay="1000"  data-aos-duration="1000">
                 <figure><img className="relative" src={image} alt="home" /></figure>
                 <p className="bg-orange-600 oswald text-white text-xl px-5 py-2 capitalize absolute top-6 left-7 rounded">{status}</p>
                 <div className="card-body">
