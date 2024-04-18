@@ -6,6 +6,7 @@ import { AuthContext } from "../../AuthProvider/AuthProvider";
 const Navbar = () => {
 
     const { user, logOut } = useContext(AuthContext)
+    
     const Navlink = <>
         <NavLink className={({ isActive, isPending }) =>
             isActive

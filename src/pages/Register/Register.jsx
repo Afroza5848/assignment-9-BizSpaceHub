@@ -17,7 +17,7 @@ const Register = () => {
     //const navigate = useNavigate()
 
     //   useContext
-    const { createUser, createUserUpdateProfile,setUser,user } = useContext(AuthContext);
+    const { createUser,createUserUpdateProfile,setLoading } = useContext(AuthContext);
     // use hook form
     const {
         register,
@@ -39,16 +39,21 @@ const Register = () => {
             toast.error("Your password should have at least one upperCase and one lowerCase characters")
             return;
         }
+        
 
         createUser(email, password)
             .then(result => {
                 console.log(result.user);
+                createUserUpdateProfile(name,photo) 
+                    .then(()=> {
+                        updateProfile(result.user, {
+                            displayName: name, photoURL: photo
+                        })
+                        setLoading(true)
+                })
                 
-                updateProfile(result.user, {
-                    displayName: name, photoURL: photo
-                  }).then(() => {
-                    
-                  })
+                      
+                
 
             })
             .catch(error => {
