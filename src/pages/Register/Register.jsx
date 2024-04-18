@@ -44,13 +44,15 @@ const Register = () => {
         createUser(email, password)
             .then(result => {
                 console.log(result.user);
-                createUserUpdateProfile(name,photo) 
-                    .then(()=> {
+                // createUserUpdateProfile(name,photo) 
+                //     .then(()=> {
                         updateProfile(result.user, {
                             displayName: name, photoURL: photo
                         })
+                        toast.success('User Added Successfully')
                         setLoading(true)
-                })
+                        
+               // })
                 
                       
                 
