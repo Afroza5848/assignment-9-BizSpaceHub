@@ -26,18 +26,17 @@ const AuthProvider = ({ children }) => {
     }
     // use profile update
     const createUserUpdateProfile = (name,image) => {
-       
-        updateProfile(auth.currentUser, {
+        setLoading(false)
+        setUser({
+            ...user,
+            displayName:name,
+            photoURL:image,
+           })
+      return  updateProfile(auth.currentUser, {
             displayName: name,
              photoURL: image
+             
         })
-       setUser({
-        ...user,
-        displayName:name,
-        photoURL:image,
-       })
-        
-
     }
     
     // user sign out 

@@ -1,4 +1,4 @@
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import registerImg from '../../assets/image/registerImg.png'
 import { useContext, useState } from 'react';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
@@ -8,15 +8,16 @@ import 'react-toastify/dist/ReactToastify.css';
 import { FaEye } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa";
 import { Helmet } from 'react-helmet-async';
+import { updateProfile } from 'firebase/auth';
 
 const Register = () => {
 
     //const [userError,setUserError] = useState('');
     const [showPassword, setShowPassword] = useState(false);
-    const navigate = useNavigate()
+    //const navigate = useNavigate()
 
     //   useContext
-    const { createUser, createUserUpdateProfile } = useContext(AuthContext);
+    const { createUser, createUserUpdateProfile,setUser,user } = useContext(AuthContext);
     // use hook form
     const {
         register,
@@ -26,7 +27,8 @@ const Register = () => {
 
 
     const onSubmit = (data) => {
-        const { email, password, name, photo } = data;
+        const { email, password, name,photo } = data;
+        console.log(email,password,);
         // reset error
         // console.log(userError);
         if (password.length < 6) {
@@ -41,11 +43,12 @@ const Register = () => {
         createUser(email, password)
             .then(result => {
                 console.log(result.user);
-                createUserUpdateProfile(name, photo)
-                    .then(() => {
-                        toast.success("User Added Successfully");
-                        navigate('/login')
-                    })
+                
+                updateProfile(result.user, {
+                    displayName: name, photoURL: photo
+                  }).then(() => {
+                    
+                  })
 
             })
             .catch(error => {

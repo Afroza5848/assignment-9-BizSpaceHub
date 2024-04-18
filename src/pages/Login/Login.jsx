@@ -12,7 +12,7 @@ import { Helmet } from 'react-helmet-async';
 
 const Login = () => {
     
-    const [userError,setUserError] = useState('');
+   
     const [showPassword, setShowPassword] = useState(false);
     const {createUserSignIn,googleLogin,githubLogin} = useContext(AuthContext);
     const location = useLocation();
@@ -36,19 +36,17 @@ const Login = () => {
     const onSubmit = (data) => {
         const { email, password } = data;
         // reset error
-        setUserError('');
-
         createUserSignIn(email, password)
             .then(result => {
                 console.log(result.user);
                 toast.success("User Login Successfully")
                 // navigate
                navigate(location?.state ? location.state : "/")
+               
 
             })
             .catch(error => {
-                setUserError(error.message.split('(')[1].split(')')[0]);
-                toast.error(userError)
+                toast.error(error.message.split('(')[1].split(')')[0])
             })
       
 
